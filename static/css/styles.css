@@ -1,0 +1,236 @@
+/* Resetare pentru stiluri implicite */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Stiluri generale ale paginii */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+  margin-top: 55px;
+}
+
+/* Definirea header-ului */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 30px;
+  color: #6C63FF;
+  letter-spacing: 1px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  font-size: 16px;
+  color: #333;
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #6C63FF;
+  color: #fff;
+}
+
+/* Stilizare pentru header-ul fixed */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 15px 30px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Stiluri pentru sectiunea de posturi */
+#posts {
+  margin-top: 100px;
+  padding: 20px 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Stiluri pentru fiecare post in parte */
+#posts div {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: 0.3s ease-in-out;
+}
+
+#posts div:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+#posts img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+#posts h2 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: bold;
+}
+
+#posts p {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+#posts a {
+  text-decoration: none;
+  color: #6C63FF;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+#posts a:hover {
+  color: #48C6EF;
+}
+
+/* Footer-ul blogului */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  font-size: 14px;
+  margin-top: 50px;
+}
+
+/* Stiluri responsive pentru dispozitive mobile */
+@media (max-width: 768px) {
+  #posts {
+    grid-template-columns: 1fr;
+    margin-top: 150px;
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 26px;
+  }
+
+  nav a {
+    font-size: 14px;
+  }
+
+  #posts h2 {
+    font-size: 20px;
+  }
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.8;
+  padding: 20px;
+}
+
+/* Post Container Styling */
+.post-container {
+  width: 80%;
+  margin: 30px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Post Title Styling */
+.post-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Post Image Styling */
+.post-image {
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Post Content Styling */
+.post-content p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+  text-align: justify; /* Makes the text look aligned with even spacing on both sides */
+}
+
+/* Bold Text in Content */
+.post-content b {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Paragraph Styling */
+.post-content p + p {
+  margin-top: 20px; /* Adds space between paragraphs */
+}
+
+/* Link Styling within the Content */
+.post-content a {
+  color: #6C63FF;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.post-content a:hover {
+  color: #48C6EF;
+}

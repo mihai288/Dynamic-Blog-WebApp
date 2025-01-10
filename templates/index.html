@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <title>Blog Homepage</title>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1 class="logo">My Blog</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <div class="main-content">
+    <div id="posts">
+      {% for post in posts %}
+        <div class="post-card">
+          <h2>{{ post.title }}</h2>
+          <img src="{{ post.image }}" alt="{{ post.title }}" width="300" height="200">
+          <p>{{ post.description }}</p>
+          <a href="/post/{{ post.filename }}" class="read-more">Read More</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 My Blog. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

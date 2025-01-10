@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <title>Control Panel</title>
+</head>
+<body>
+  <h1>Admin Panel</h1>
+  <input type="password" id="password" placeholder="Enter password">
+  <button onclick="login()">Login</button>
+  <div id="admin-panel" style="display: none;">
+    <h2>Create Post</h2>
+    <form id="create-post-form">
+      <input type="text" id="title" placeholder="Title" required><br>
+      <input type="text" id="description" placeholder="Description"><br>
+      <input type="text" id="image" placeholder="Image URL"><br>
+      <textarea id="content" placeholder="Content" required></textarea><br>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+  <script>
+    function login() {
+      const password = document.getElementById("password").value;
+      fetch("/api/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      })
+        .then((res) => {
+          if (res.ok) {
+            document.getElementById("admin-panel").style.display = "block";
+          } else {
+            alert("Invalid password");
+          }
+        });
+    }
+
+    document.getElementById("create-post-form").onsubmit = (e) => {
+      e.preventDefault();
+      const title = document.getElementById("title").value;
+      const description = document.getElementById("description").value;
+      const content = document.getElementById("content").value;
+      const image = document.getElementById("image").value;
+
+      fetch("/api/posts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ title, description, content, image }),
+      }).then((res) => {
+        if (res.ok) alert("Post created!");
+        else alert("Failed to create post.");
+      });
+    };
+  </script>
+</body>
+</html>
